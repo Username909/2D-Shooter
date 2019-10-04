@@ -6,6 +6,7 @@ public class BulletMovement : MonoBehaviour
 {
     // Tells the bullet where to go and how fast
     //Variable Declaration
+
     [Header("Bullet Speed")]
     public float speed;
 

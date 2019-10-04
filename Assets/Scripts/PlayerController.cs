@@ -46,15 +46,13 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Read input
+        // Reads input
         float horiz = Input.GetAxis("Horizontal");
         float vert = Input.GetAxis("Vertical");
-        //Debug.Log("x: " + horiz + ",y: " + vert);
 
         Vector2 movement = new Vector2(horiz, vert);
 
-        //Move the Player
-        //Rigidbody2D rBody = GetComponent<Rigidbody2D>();
+        //Moves the Player
         rBody.velocity = movement * speed;
 
         //Restricts the player from leaving the play area
