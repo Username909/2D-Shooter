@@ -1,11 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//New Using Statement
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
-// Running Game Logic
 
 public class GameController : MonoBehaviour
 {
@@ -18,8 +16,8 @@ public class GameController : MonoBehaviour
     public float spawnwait;     // The wait between each hazard in each wave
     public float wavewait;      // How long between each wave
 
-    [Header("UI Settings")]
-    public Text scoreLabel;
+    [Header("UI Settings")] // used to manipulate the texts
+    public Text scoreLabel; 
     public Text livesLabel;
     public Text GameOverLabel;
     public Text RestartLabel;
@@ -38,7 +36,8 @@ public class GameController : MonoBehaviour
 
         set
         {
-            lives = value;
+            lives = value;  
+            //finds if the player has no lives and show it 
             if (lives < 1)
             {
                 Destroy(Player);
@@ -64,7 +63,7 @@ public class GameController : MonoBehaviour
         {
             score = value;
 
-
+            // show the players score
             scoreLabel.text = "Score: " + score.ToString();
         }
     }
@@ -83,14 +82,10 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
         //Check if your restarting
         if (restart == true)
         {
-            GameOverLabel.enabled = true;
+            GameOverLabel.enabled = true; // turns on the game over and restart texts
             RestartLabel.enabled = true;
             if (Input.GetKeyDown(KeyCode.R))
             {
